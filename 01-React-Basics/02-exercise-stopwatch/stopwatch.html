@@ -13,81 +13,10 @@
 
 <script type='text/babel'>
 
-    const Counter = (props) => {
-
-        function msToTime(s) {
-            let ms = s % 1000;
-            s = (s - ms) / 1000;
-            let secs = s % 60;
-            s = (s - secs) / 60;
-            let mins = s % 60;
-            let hrs = (s - mins) / 60;
-
-            return ('00' + hrs).slice(-2) + ' : '
-                + ('00' + mins).slice(-2) + ' : '
-                + ('00' + secs).slice(-2) + ' . ' +
-                ('000' + ms).slice(-3);
-        }
-
-        return (
-            <h5>
-                {msToTime(props.currentTime)}
-            </h5>
-        );
-    };
-
-    const PauseButton = (props) => {
-        return (
-            <button
-                onClick={props.clickHandler}
-            >
-                {props.isActive ? 'Pause' : 'Start'}
-            </button>
-        );
-    };
-
-    const ClearButton = ({clickHandler}) => {
-        return <button onClick={clickHandler}>Clear</button>;
-    };
-
     const StopWatch = () => {
-
-        const [currentTime, setCurrentTime] = React.useState(0);
-        const [isRunning, setIsRunning] = React.useState(false);
-        const [currentIntervalId, setCurrentIntervalId] = React.useState(null);
-
-        const pauseHandler = () => {
-            setIsRunning(!isRunning);
-            if (isRunning) {
-                clearInterval(currentIntervalId);
-            } else {
-                const intervalId = setInterval(() => {
-                    setCurrentTime(prevState => prevState + 10);
-                }, 20);
-                setCurrentIntervalId(intervalId);
-            }
-        };
-
-        const cancelHandler = () => {
-            if (currentIntervalId) {
-                clearInterval(currentIntervalId);
-            }
-            setIsRunning(false);
-            setCurrentTime(0);
-        };
-
         return (
             <div>
-                <Counter
-                    currentTime={currentTime}
-                />
-                <PauseButton
-                    clickHandler={pauseHandler}
-                    isActive={isRunning}
-                />
-                <ClearButton
-                    clickHandler={cancelHandler}
-                />
+
             </div>
         );
     };

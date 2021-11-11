@@ -1,42 +1,18 @@
 import React from 'react';
 import {Outcome} from './Outcome';
 
-function Interface(props) {
+export const Interface = (props) => {
 
     return (
         <div>
-            {props.result &&
-             <Outcome
-                 result={props.result}
-             />
-            }
+            <Outcome/>
             <div>
-                <a className='score'>Dealer Score : {props.computerScore} </a>
-                <a className='score'>Player Score : {props.playerScore}</a>
+                <a className='score'>Dealer Score : computerScore </a>
+                <a className='score'>Player Score : playerScore</a>
             </div>
-            <button
-                id='deal-button'
-                onClick={props.deal}
-                disabled={props.isPlaying}
-            >
-                Deal
-            </button>
-            <button
-                id='hit-button'
-                onClick={props.hit}
-                disabled={!props.isPlaying}
-            >
-                Hit
-            </button>
-            <button
-                id='stand-button'
-                onClick={props.stand}
-                disabled={!props.isPlaying}
-            >
-                Stand
-            </button>
+            <button id='deal-button'>Deal</button>
+            <button id='hit-button'>Hit</button>
+            <button id='stand-button'>Stand</button>
         </div>
     );
 }
-
-export default Interface;

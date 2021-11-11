@@ -1,12 +1,5 @@
-import PropTypes from 'prop-types';
-
 export const Outcome = props => {
 
-    return <div className='outcome'>
-        {props.result}
-    </div>;
+    return <div className='outcome'>results</div>;
 };
 
-Outcome.propTypes = {
-    result: PropTypes.string
-};
