@@ -124,8 +124,9 @@ Work in `04-Blackjack` folder, to create a Blackjack application!
 
 # 06 - Budget Tracker - Exercise
 
+[Exercise description](./06-BudgetTracker/06-01-BudgetTracker.md)
 
-### What's next?
+# What's next?
 
 - React Context
 - TypeScript
