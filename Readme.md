@@ -1,8 +1,8 @@
 # 00 - Intro
 
-## Elméleti alapok
+## Basics
 
-### Kis történelem
+### Quick history
 
 Java - 1995 - Beta, 1996 - 1.0  
 JavaScript - 1996 -> 1997 ECMAScript  
