@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>Hello React</title>
+    <script crossorigin src='https://unpkg.com/react@17/umd/react.production.min.js'></script>
+    <script crossorigin src='https://unpkg.com/react-dom@17/umd/react-dom.production.min.js'></script>
+    <script crossorigin src='https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js'></script>
+    <link href='style.css' rel='stylesheet'>
+</head>
+<body>
+
+<div id='root'></div>
+
+<script type='text/babel'>
+
+    const root = document.getElementById('root');
+
+    class TimerComponent extends React.Component {
+
+        state = {
+            timer: 1
+        };
+
+        componentDidMount() {
+            setInterval(() => {
+                this.setState({
+                    timer: this.state.timer + 1
+                });
+            }, 1000);
+        }
+
+        render() {
+            return (<h6 className='caption'>Time spent staring at this exciting page: {this.state.timer} seconds</h6>)
+        }
+    }
+
+    const CaptionComponent = (props) => <h2 className='caption'>{props.subtitle}</h2>;
+
+    const content = (
+        <div>
+            <h1 className='main-title'><span>⚛ Hello React!</span></h1>
+            <CaptionComponent subtitle={'Dinamikus szöveg!'}/>
+            <TimerComponent/>
+        </div>
+    );
+
+    ReactDOM.render(content, root);
+
+</script>
+
+</body>
+</html>
