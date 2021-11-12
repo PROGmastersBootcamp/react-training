@@ -1,11 +1,11 @@
 import React from 'react';
-import {Outcome} from './Outcome';
+import {OutcomeComponent} from "./outcome.component";
 
-export const Interface = (props) => {
+export const InterfaceComponent = (props) => {
 
     return (
         <div>
-            <Outcome/>
+            <OutcomeComponent/>
             <div>
                 <a className='score'>Dealer Score : computerScore </a>
                 <a className='score'>Player Score : playerScore</a>
