@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Interface from './Interface';
-import {Hand} from './Hand';
-import {fullDeck} from '../fullDeck';
+import InterfaceComponent from './interface.component';
+import {HandComponent} from './hand.component';
+import {fullDeckConst} from '../fullDeck.const';
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -16,7 +16,7 @@ function shuffle(array) {
     return array;
 }
 
-function Table() {
+function TableComponent() {
 
     const [tableState, setTableState] = useState({
                                                      computerHand: ['00', '00'],
@@ -27,7 +27,7 @@ function Table() {
 
     const [result, setResult] = useState('');
 
-    const [deck, setDeck] = useState([...fullDeck]);
+    const [deck, setDeck] = useState([...fullDeckConst]);
 
     const pickRandomCard = () => {
         const shuffledDeck = shuffle(deck);
@@ -117,11 +117,11 @@ function Table() {
 
     return (
         <div>
-            <Hand
+            <HandComponent
                 cards={tableState.computerHand}
                 isComputerHand
             />
-            <Interface
+            <InterfaceComponent
                 message={tableState.message}
                 deal={deal}
                 hit={hit}
@@ -131,9 +131,9 @@ function Table() {
                 result={result}
                 isPlaying={tableState.isPlaying}
             />
-            <Hand cards={tableState.playerHand}/>
+            <HandComponent cards={tableState.playerHand}/>
         </div>
     );
 }
 
-export default Table;
+export default TableComponent;

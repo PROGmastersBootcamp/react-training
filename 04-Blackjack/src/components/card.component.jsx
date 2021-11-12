@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const Card = props => {
+export const CardComponent = props => {
 
     return (
         <div className={'card'}>
@@ -12,6 +12,6 @@ export const Card = props => {
     );
 };
 
-Card.propTypes = {
+CardComponent.propTypes = {
     cardFace: PropTypes.string.isRequired
 };

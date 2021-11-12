@@ -1,12 +1,12 @@
 import React from 'react';
-import {Outcome} from './Outcome';
+import {OutcomeComponent} from './outcome.component';
 
-function Interface(props) {
+function InterfaceComponent(props) {
 
     return (
         <div>
             {props.result &&
-             <Outcome
+             <OutcomeComponent
                  result={props.result}
              />
             }
@@ -39,4 +39,4 @@ function Interface(props) {
     );
 }
 
-export default Interface;
+export default InterfaceComponent;

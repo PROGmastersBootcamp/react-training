@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
-import {Card} from './Card';
+import {CardComponent} from './card.component';
 
-export const Hand = props => {
+export const HandComponent = props => {
 
     return (
         <div>
             {props.cards.map((card, index) =>
                                  props.isComputerHand && !props.isPlaying && index === 0
-                                     ? <Card key={index} cardFace={'00'}/>
-                                     : <Card key={index} cardFace={card}/>
+                                     ? <CardComponent key={index} cardFace={'00'}/>
+                                     : <CardComponent key={index} cardFace={card}/>
             )}
         </div>
     );
 };
 
-Hand.propTypes = {
+HandComponent.propTypes = {
     cards: PropTypes.arrayOf(PropTypes.string).isRequired,
     isComputerHand: PropTypes.bool,
     isPlaying: PropTypes.bool,

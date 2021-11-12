@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 
-export const Outcome = props => {
+export const OutcomeComponent = props => {
 
     return <div className='outcome'>
         {props.result}
     </div>;
 };
 
-Outcome.propTypes = {
+OutcomeComponent.propTypes = {
     result: PropTypes.string
 };
