@@ -19,20 +19,34 @@
     class TimerComponent extends React.Component {
 
         state = {
-            timer: 1
+            timer: 1,
         };
 
         componentDidMount() {
+
             setInterval(() => {
+                //DON'T!! VERY BAD PRACTICE
+                // this.state = {timer: this.state.timer + 1}
+
                 this.setState({
                     timer: this.state.timer + 1
                 });
+
+                console.log(this.state.timer);
+
             }, 1000);
         }
 
         render() {
-            return (<h6 className='caption'>Time spent staring at this exciting page: {this.state.timer} seconds</h6>)
+            return (
+                <h6
+                    className='caption'
+                >
+                    Time spent staring at this exciting page: {this.state.timer} seconds
+                </h6>
+            )
         }
+
     }
 
     const CaptionComponent = (props) => <h2 className='caption'>{props.subtitle}</h2>;

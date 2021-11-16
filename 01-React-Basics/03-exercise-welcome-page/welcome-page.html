@@ -2,23 +2,47 @@
 <html lang='en'>
 <head>
     <meta charset='utf-8'>
+
     <title>Hello React - Exercise</title>
-    <!--    TODO: Load the required libraries/scripts (React, React-DOM, Babel) -->
-    <!--    TODO: Hozzunk létre egy saját .css fájlt, és importáljuk be -->
-    <!--    TODO: Create and import your own, custom CSS file -->
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 <div id='root'></div>
 <script type='text/babel'>
-    /*
-    TODO: Render your own component, containing the following sub-components:
-     - Welcomes the user on the page
-     - Outputs the current date (new Date() )
-     - Optional: Update the date every second
-     ------------------------------------------------------
-     - Use a new component for each functionality
-     - Use a custom CSS to give style to your components
-    */
+
+    const WelcomeMessageComponent = () => {
+        return <h1>Welcome to my site!</h1>
+    };
+
+    const CalendarComponent = () => {
+
+        const [date, setDate] = React.useState(new Date());
+
+        React.useEffect(() => {
+            setInterval(() => {
+                setDate(new Date());
+            }, 1000);
+        }, []);
+
+        return <h4>{date.toString()}</h4>
+    };
+
+    const WelcomePageComponent = () => {
+        return (
+            <div>
+                <WelcomeMessageComponent/>
+                <CalendarComponent/>
+            </div>
+        );
+    };
+
+    ReactDOM.render(<WelcomePageComponent/>, root);
+
 </script>
 </body>
 </html>

@@ -5,7 +5,8 @@
     <title>Stopwatch</title>
     <script crossorigin src='https://unpkg.com/react@17/umd/react.production.min.js'></script>
     <script crossorigin src='https://unpkg.com/react-dom@17/umd/react-dom.production.min.js'></script>
-    <script crossorigin src='https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js'></script>
+    <script crossorigin src='https://cdnjs.cloudflare.com/ajax/tlibs/babel-standalone/6.26.0/babel.js'></script>
+    <link rel="stylesheet" href="stopwatch.css">
 </head>
 <body>
 
@@ -13,10 +14,74 @@
 
 <script type='text/babel'>
 
-    const StopWatch = () => {
-        return (
-            <div>
 
+    const DisplayComponent = (props) => {
+
+        const millisecondsToTime = (milli) => {
+            const milliseconds = milli % 1000;
+            const seconds = Math.floor((milli / 1000) % 60);
+            const minutes = Math.floor((milli / (60 * 1000)) % 60);
+            return minutes + ":" + seconds + "." + milliseconds;
+        }
+
+        return (
+            <div className="stopwatch-digits">
+                {millisecondsToTime(props.currentTime)}
+            </div>
+        );
+    };
+
+    const ButtonComponent = (props) => {
+
+        return (
+            <button
+                onClick={props.clickHandler}
+            >
+                {props.text}
+            </button>
+        )
+    };
+
+    const StopWatch = () => {
+
+        const [currentTime, setCurrentTime] = React.useState(0);
+        const [isRunning, setIsRunning] = React.useState(false);
+        const [currentIntervalId, setCurrentIntervalId] = React.useState(0);
+
+        const startHandler = (event) => {
+            setIsRunning(p => !p);
+
+            if (isRunning) {
+                clearInterval(currentIntervalId);
+            } else {
+                const interval = setInterval(() => {
+                    setCurrentTime(ct => ct + 10);
+                }, 10);
+                setCurrentIntervalId(interval);
+            }
+        };
+
+        const clearHandler = (event) => {
+            clearInterval(currentIntervalId);
+
+            setIsRunning(false);
+
+            setCurrentTime(0);
+        };
+
+        return (
+            <div className="stopwatch-container">
+                <DisplayComponent
+                    currentTime={currentTime}
+                />
+                <ButtonComponent
+                    text={isRunning ? 'Pause' : 'Start'}
+                    clickHandler={startHandler}
+                />
+                <ButtonComponent
+                    text="Clear"
+                    clickHandler={clearHandler}
+                />
             </div>
         );
     };

@@ -16,30 +16,33 @@
 
     const root = document.getElementById('root');
 
-
     const TimerComponent = () => {
 
         const [timer, setTimer] = React.useState(1);
 
-        setInterval(() => {
-            setTimer(timer + 1); //TODO - Note that it's buggy! Discuss why, and fix it!
-        }, 1000);
+        React.useEffect(() => {
+            setInterval(() => {
+                setTimer(prevTimer => prevTimer + 1);
+            }, 1000);
+        }, []);
 
         return <h6 className='caption'>Time spent staring at exciting page: {timer} seconds</h6>;
     };
-
-    const CaptionComponent = (props) => <h2 className='caption'>{props.subtitle}</h2>
 
     const CounterComponent = () => {
 
         const [counter, setCounter] = React.useState(0);
 
         const handleClick = (event) => {
-            setCounter(counter + 1);
+            setCounter((prevState) => {
+                return prevState + 1;
+            });
         }
 
         return <button onClick={e => handleClick(e)}>I'm clicked {counter} times</button>
     };
+
+    const CaptionComponent = (props) => <h2 className='caption'>{props.subtitle}</h2>
 
     const content = (
         <div>

@@ -15,12 +15,14 @@
 
     const root = document.getElementById('root');
 
-    const CaptionComponent = (props) => <h2 className='caption'>{props.subtitle}</h2>
+    const CaptionComponent = (props) => {
+        return <h2 className='caption'>{props.subtitle}</h2>
+    }
 
     const content = (
         <div>
             <h1 className='main-title'><span>⚛ Hello React!</span></h1>
-            <CaptionComponent subtitle={'Dinamikus szöveg!'}/>
+            <CaptionComponent subtitle='Dinamikus szöveg!'/>
         </div>
     );
 
