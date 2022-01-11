@@ -145,3 +145,8 @@ Work in `04-Blackjack` folder, to create a Blackjack application!
     - [Semantic UI](https://react.semantic-ui.com/)
 - [In-Depth-Dev](https://indepth.dev/)
 - [Awesome-React](https://github.com/enaqx/awesome-react)
+
+# See also
+
+- [Understanding React's UI Rendering Process](https://youtu.be/i793Qm6kv3U)
+- [What is the Shadow DOM?](https://bitsofco.de/what-is-the-shadow-dom/)
