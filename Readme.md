@@ -138,10 +138,17 @@ Work in `04-Blackjack` folder, to create a Blackjack application!
 - Server Side Rendering - [Next.js](https://nextjs.org/)
 - [React Native](https://reactnative.dev/)
 - [Dive into the build process and Webpack](https://www.freecodecamp.org/news/an-intro-to-webpack-what-it-is-and-how-to-use-it-8304ecdc3c60/)
-    - [Official docs](https://webpack.js.org/)
+  - [Official docs](https://webpack.js.org/)
 - Component libraries
-    - [React-Bootstrap](https://react-bootstrap.github.io/)
-    - [Material UI](https://mui.com/)
-    - [Semantic UI](https://react.semantic-ui.com/)
+  - [React-Bootstrap](https://react-bootstrap.github.io/)
+  - [Material UI](https://mui.com/)
+  - [Semantic UI](https://react.semantic-ui.com/)
 - [In-Depth-Dev](https://indepth.dev/)
 - [Awesome-React](https://github.com/enaqx/awesome-react)
+
+### Cool YouTube videos:
+
+- [Deep Dive #1](https://youtu.be/7YhdqIR2Yzo)
+- [Deep Dive #2](https://youtu.be/0ympFIwQFJw)
+- [Understanding React's UI Rendering Process](https://youtu.be/i793Qm6kv3U )
+- [React deep dive: 6 things you didn't know - Joel Denning](https://youtu.be/BXTU4NmMu8A )
